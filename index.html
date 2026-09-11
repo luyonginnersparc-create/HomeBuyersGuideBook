@@ -3,46 +3,72 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta 
-        name="viewport" 
+    <meta
+        name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
 
     <title>Home Buyers Guide Book</title>
 
-    <!-- Favicon -->
-    <link 
-        rel="icon" 
-        type="image/png" 
+    <!-- =========================================
+         INNERSPARC FAVICON
+         ========================================= -->
+
+    <link
+        rel="icon"
+        type="image/png"
         href="https://i.imgur.com/TcCQCER.png"
     >
 
-    <link 
-        rel="shortcut icon" 
-        type="image/png" 
+    <link
+        rel="shortcut icon"
+        type="image/png"
         href="https://i.imgur.com/TcCQCER.png"
     >
 
-    <!-- Apple / Mobile Icon -->
-    <link 
-        rel="apple-touch-icon" 
+    <link
+        rel="apple-touch-icon"
         href="https://i.imgur.com/TcCQCER.png"
     >
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Home Buyers Guide Book">
-    <meta property="og:description" content="Your Home Buyers Guide">
-    <meta 
-        property="og:image" 
+    <!-- Open Graph / Social Preview -->
+
+    <meta
+        property="og:title"
+        content="Home Buyers Guide Book"
+    >
+
+    <meta
+        property="og:description"
+        content="Your Home Buyers Guide"
+    >
+
+    <meta
+        property="og:image"
         content="https://i.imgur.com/TcCQCER.png"
     >
 
+    <meta
+        property="og:type"
+        content="website"
+    >
+
     <style>
+
+        /* =========================================
+           RESET
+           ========================================= */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
+
+        /* =========================================
+           PAGE
+           ========================================= */
 
         html,
         body {
@@ -52,27 +78,50 @@
 
         body {
             background: #f4f5fb;
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
+            overflow: hidden;
         }
+
+
+        /* =========================================
+           LOADING CONTAINER
+           ========================================= */
 
         .loading {
             text-align: center;
             color: #222689;
+
+            padding: 30px;
         }
+
+
+        /* =========================================
+           LOGO
+           ========================================= */
 
         .loading img {
             width: 70px;
             height: 70px;
+
             object-fit: contain;
-            margin-bottom: 15px;
+
+            margin-bottom: 18px;
         }
+
+
+        /* =========================================
+           SPINNER
+           ========================================= */
 
         .spinner {
             width: 35px;
             height: 35px;
+
             margin: 0 auto 15px;
 
             border: 3px solid #dde0f0;
@@ -83,38 +132,104 @@
             animation: spin 0.8s linear infinite;
         }
 
+
+        /* =========================================
+           SPINNER ANIMATION
+           ========================================= */
+
         @keyframes spin {
+
+            from {
+                transform: rotate(0deg);
+            }
+
             to {
                 transform: rotate(360deg);
             }
+
         }
+
+
+        /* =========================================
+           LOADING TEXT
+           ========================================= */
 
         .loading p {
             font-size: 14px;
+            color: #222689;
+
+            margin-top: 5px;
         }
+
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 600px) {
+
+            .loading img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .spinner {
+                width: 32px;
+                height: 32px;
+            }
+
+            .loading p {
+                font-size: 13px;
+            }
+
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
+    <!-- =========================================
+         LOADING SCREEN
+         ========================================= -->
+
     <div class="loading">
 
-        <img 
+        <img
             src="https://i.imgur.com/TcCQCER.png"
-            alt="Home Buyers Guide"
+            alt="Innersparc"
         >
 
         <div class="spinner"></div>
 
-        <p>Loading Home Buyers Guide...</p>
+        <p>
+            Loading Home Buyers Guide...
+        </p>
 
     </div>
 
+
+    <!-- =========================================
+         GOOGLE APPS SCRIPT REDIRECT
+         ========================================= -->
+
     <script>
+
         const GAS_URL =
             "https://script.google.com/macros/s/AKfycbyRI9cd5PMWAS_X3o0xYf1X8pSoKnMKApX30yv1xlQMVLjDkj-UYMJ0zOAx-5Y9-2Bz2g/exec";
 
-        window.location.replace(GAS_URL);
+
+        // Small delay so the favicon/logo can load
+        // before redirecting.
+
+        setTimeout(function () {
+
+            window.location.replace(GAS_URL);
+
+        }, 500);
+
     </script>
 
 </body>
