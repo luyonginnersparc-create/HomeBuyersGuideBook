@@ -10,6 +10,18 @@
 
     <title>Home Buyers Guide Book</title>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-13SMX0MWR6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-13SMX0MWR6');
+    </script>
+
     <!-- =========================================
          INNERSPARC FAVICON
          ========================================= -->
@@ -65,7 +77,6 @@
             box-sizing: border-box;
         }
 
-
         /* =========================================
            PAGE
            ========================================= */
@@ -79,14 +90,11 @@
         body {
             background: #f4f5fb;
             font-family: Arial, Helvetica, sans-serif;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             overflow: hidden;
         }
-
 
         /* =========================================
            LOADING CONTAINER
@@ -95,10 +103,8 @@
         .loading {
             text-align: center;
             color: #222689;
-
             padding: 30px;
         }
-
 
         /* =========================================
            LOGO
@@ -107,12 +113,9 @@
         .loading img {
             width: 70px;
             height: 70px;
-
             object-fit: contain;
-
             margin-bottom: 18px;
         }
-
 
         /* =========================================
            SPINNER
@@ -121,24 +124,18 @@
         .spinner {
             width: 35px;
             height: 35px;
-
             margin: 0 auto 15px;
-
             border: 3px solid #dde0f0;
             border-top-color: #222689;
-
             border-radius: 50%;
-
             animation: spin 0.8s linear infinite;
         }
-
 
         /* =========================================
            SPINNER ANIMATION
            ========================================= */
 
         @keyframes spin {
-
             from {
                 transform: rotate(0deg);
             }
@@ -146,9 +143,7 @@
             to {
                 transform: rotate(360deg);
             }
-
         }
-
 
         /* =========================================
            LOADING TEXT
@@ -157,17 +152,14 @@
         .loading p {
             font-size: 14px;
             color: #222689;
-
             margin-top: 5px;
         }
-
 
         /* =========================================
            MOBILE
            ========================================= */
 
         @media (max-width: 600px) {
-
             .loading img {
                 width: 60px;
                 height: 60px;
@@ -181,13 +173,10 @@
             .loading p {
                 font-size: 13px;
             }
-
         }
 
     </style>
-
 </head>
-
 
 <body>
 
@@ -196,7 +185,6 @@
          ========================================= -->
 
     <div class="loading">
-
         <img
             src="https://i.imgur.com/TcCQCER.png"
             alt="Innersparc"
@@ -207,29 +195,21 @@
         <p>
             Loading Home Buyers Guide...
         </p>
-
     </div>
-
 
     <!-- =========================================
          GOOGLE APPS SCRIPT REDIRECT
          ========================================= -->
 
     <script>
-
         const GAS_URL =
             "https://script.google.com/macros/s/AKfycbyRI9cd5PMWAS_X3o0xYf1X8pSoKnMKApX30yv1xlQMVLjDkj-UYMJ0zOAx-5Y9-2Bz2g/exec";
 
-
-        // Small delay so the favicon/logo can load
+        // Small delay so the favicon/logo and analytics can initialize
         // before redirecting.
-
         setTimeout(function () {
-
             window.location.replace(GAS_URL);
-
         }, 500);
-
     </script>
 
 </body>
